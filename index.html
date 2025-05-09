@@ -1,0 +1,950 @@
+
+<style>
+/* 强制应用粉色按钮样式 */
+.btn-primary, .btn-primary:focus {
+    background-color: #ff80ab !important;
+    border-color: #ff80ab !important;
+    color: white !important;
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background-color: #c94f7c !important;
+    border-color: #c94f7c !important;
+    color: white !important;
+}
+
+.btn-outline-primary {
+    color: #ff80ab !important;
+    border-color: #ff80ab !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #ffb2dd !important;
+    color: #d81b60 !important;
+}
+
+.btn-success {
+    background-color: #ec407a !important;
+    border-color: #ec407a !important;
+}
+
+.btn-success:hover {
+    background-color: #d81b60 !important;
+    border-color: #d81b60 !important;
+}
+
+.btn-info {
+    background-color: #f06292 !important;
+    border-color: #f06292 !important;
+}
+
+.btn-warning {
+    background-color: #ff4081 !important;
+    border-color: #ff4081 !important;
+}
+
+.btn-danger {
+    background-color: #f50057 !important;
+    border-color: #f50057 !important;
+}
+</style>
+<style>
+/* 王者粉色系主题样式 */
+:root {
+    --primary-color: #ff80ab;
+    --primary-dark: #c94f7c;
+    --primary-light: #ffb2dd;
+    --accent-color: #f48fb1;
+    --success-color: #ec407a;
+    --info-color: #f06292;
+    --warning-color: #ff4081;
+    --danger-color: #f50057;
+    --text-color: #d81b60;
+    --light-text: #f8bbd0;
+    --border-color: #ffcce6;
+    --bg-color: #fff6f9;
+    --card-bg: #ffffff;
+    --header-bg: #ffcce6;
+}
+
+/* 全局样式 */
+body {
+    background-color: var(--bg-color);
+    color: #424242;
+    font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 10px rgba(240, 98, 146, 0.15);
+}
+
+.navbar-brand {
+    color: var(--text-color) !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: var(--primary-color) !important;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-color) !important;
+}
+
+/* 卡片样式 */
+.card {
+    border-radius: 15px;
+    border-color: var(--border-color);
+    box-shadow: 0 4px 8px rgba(240, 98, 146, 0.1);
+    transition: all 0.3s ease;
+    background-color: var(--card-bg);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(240, 98, 146, 0.2);
+}
+
+.card-header {
+    background-color: var(--header-bg) !important;
+    color: var(--text-color) !important;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1.25rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* 按钮样式 */
+.btn {
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-light);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active {
+    background-color: #d81b60 !important;
+    border-color: #d81b60 !important;
+}
+
+.btn-info {
+    background-color: var(--info-color);
+    border-color: var(--info-color);
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #e91e63;
+    border-color: #e91e63;
+}
+
+.btn-warning {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #f50057;
+    border-color: #f50057;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.btn-outline-dark {
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--primary-light);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* 表单样式 */
+.form-control, .form-select {
+    border-color: var(--border-color);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(255, 128, 171, 0.25);
+}
+
+.form-label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* 警告框样式 */
+.alert {
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.alert-success {
+    background-color: #fce4ec;
+    border-color: #f8bbd0;
+    color: #c2185b;
+}
+
+.alert-info {
+    background-color: #e1f5fe;
+    border-color: #b3e5fc;
+    color: #0288d1;
+}
+
+.alert-warning {
+    background-color: #fff8e1;
+    border-color: #ffe0b2;
+    color: #ff6f00;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    border-color: #ffcdd2;
+    color: #c62828;
+}
+
+/* 自定义粉色提醒框 */
+.alert-custom-pink {
+    background-color: #fce4ec;
+    border-color: var(--primary-light);
+    color: var(--text-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(240, 98, 146, 0.1);
+}
+
+.alert-custom-pink h5 {
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.alert-custom-pink hr {
+    border-color: var(--primary-light);
+    opacity: 0.5;
+}
+
+.alert-custom-pink .announcement-item {
+    padding: 8px 0;
+}
+
+/* 轮播图样式 */
+.carousel {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(240, 98, 146, 0.15);
+}
+
+.carousel-caption {
+    background-color: rgba(255, 128, 171, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 10%;
+}
+
+.carousel-indicators button {
+    background-color: var(--primary-color);
+}
+
+/* 手风琴样式 */
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-light);
+    color: var(--text-color);
+}
+
+.accordion-button:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(255, 128, 171, 0.25);
+}
+
+.accordion-item {
+    border-color: var(--border-color);
+}
+
+/* 页面标题和装饰 */
+.page-title {
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.page-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* 特色图标 */
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    background-color: rgba(255, 128, 171, 0.1);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 128, 171, 0.2);
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.4rem 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 1.8rem;
+    }
+}
+
+/* 页脚样式 */
+footer {
+    background-color: white;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 1.5rem 0;
+}
+
+footer a {
+    color: var(--primary-color);
+}
+
+footer a:hover {
+    color: var(--primary-dark);
+}
+
+/* 增强页脚样式 */
+.footer {
+    background-color: white;
+    color: #555;
+}
+
+.footer-heading {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-dark);
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    color: white;
+    text-decoration: none;
+}
+
+.footer-divider {
+    border-color: var(--border-color);
+    margin: 1.5rem 0;
+    opacity: 0.5;
+}
+</style>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 软糖王者跨区 - 软糖王者跨区</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- 自定义CSS -->
+    <link href="http://www.kuaqu.shop/assets/css/style.css" rel="stylesheet">
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.21.1/axios.min.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">软糖王者跨区</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                                        </ul>
+                <ul class="navbar-nav">
+                                        <!-- <li class="nav-item">
+                        <a class="nav-link" href="/auth/login.php"><i class="fas fa-sign-in-alt me-1"></i> 登录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/register.php"><i class="fas fa-user-plus me-1"></i> 注册</a>
+                    </li> -->
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 公告区域 -->
+        
+    <!-- 主内容区 -->
+    <div class="container mt-4">
+ 
+<!-- QQ群顶部固定消息栏 - 始终在视图中 -->
+<div class="container-fluid" style="background-color: var(--primary-color); padding: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 1050;">
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center">
+            <i class="fas fa-bullhorn me-2" style="color: white;"></i>
+            <span style="font-weight: 600; color: white;">欢迎加入官方QQ群: <strong style="font-size: 1.1rem;">365264559</strong> 获取帮助与交流!</span>
+        </div>
+    </div>
+</div>
+
+<!-- 轮播图 -->
+
+<!-- 添加QQ群信息 (主要显示) -->
+<div class="container mb-4">
+    <div class="row">
+     
+    </div>
+</div>
+
+<script>
+// 确保QQ群信息显示 - 使用多种方法确保显示
+document.addEventListener('DOMContentLoaded', function() {
+    // 创建一个复制的QQ群信息
+    const qqGroupInfo = document.getElementById('qq-group-info');
+    
+    if(qqGroupInfo) {
+        // 立即显示
+        forceShowElement(qqGroupInfo);
+        
+        // 使用MutationObserver监控元素变化
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' || 
+                    mutation.attributeName === 'style' || 
+                    mutation.attributeName === 'class') {
+                    forceShowElement(qqGroupInfo);
+                }
+            });
+        });
+        
+        // 配置观察选项
+        const config = { 
+            attributes: true, 
+            childList: true, 
+            subtree: true,
+            attributeFilter: ['style', 'class', 'display', 'visibility']
+        };
+        
+        // 开始观察目标节点
+        observer.observe(qqGroupInfo, config);
+        
+        // 定期检查显示状态
+        setInterval(function() {
+            forceShowElement(qqGroupInfo);
+        }, 1000);
+    }
+    
+    // 强制显示元素的函数
+    function forceShowElement(element) {
+        if(element) {
+            element.style.display = 'block';
+            element.style.visibility = 'visible';
+            element.style.opacity = '1';
+            element.style.height = 'auto';
+            element.style.overflow = 'visible';
+            element.style.position = 'relative';
+            element.style.zIndex = '1000';
+        }
+    }
+});
+</script>
+
+<!-- 房间创建和加入区域 -->
+<div class="row mb-4">
+    <div class="col-md-6 mb-3" id="create-room-section">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-plus-circle me-2"></i>创建房间</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" action="">
+                    <div class="mb-3">
+                        <label for="mapType" class="form-label">房间类型</label>
+                        <select class="form-select" id="mapType" name="mapType" required>
+                        <option value="3">排位模式</option>    
+                        <option value="1">匹配模式</option>
+                           
+                        </select>
+                    </div>
+                    <button type="submit" name="create_room" class="btn btn-primary w-100">创建房间</button>
+                </form>
+                
+                            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-3" id="join-room-section">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-sign-in-alt me-2"></i>加入房间</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" action="" id="joinRoomForm">
+                    <div class="mb-3">
+                        <label for="roomCode" class="form-label">房间号</label>
+                        <input type="text" class="form-control" id="roomCode" name="roomCode" required>
+                    </div>
+                    <!-- 阵营选择和增加位置选项已隐藏，使用默认值 -->
+                    <input type="hidden" name="campid" value="1">
+                    <input type="hidden" name="addPos" value="">
+                    <button type="button" id="directJoinBtn" class="btn btn-primary w-100">加入房间并启动游戏</button>
+                </form>
+                
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // 直接加入房间并启动游戏
+                    const directJoinBtn = document.getElementById('directJoinBtn');
+                    const joinRoomForm = document.getElementById('joinRoomForm');
+                    const roomCodeInput = document.getElementById('roomCode');
+                    
+                    // 直接加入房间按钮点击事件
+                    directJoinBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const roomCode = roomCodeInput.value.trim();
+                        if (!roomCode) {
+                            showGlobalMessage('请输入房间号', 'warning');
+                            return;
+                        }
+                        
+                        // 禁用按钮并显示加载状态
+                        directJoinBtn.disabled = true;
+                        directJoinBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 验证中...';
+                        
+                        // 验证并加入房间流程
+                        $.ajax({
+                            url: 'includes/room_ajax.php',
+                            type: 'POST',
+                            data: {
+                                action: 'verify_room',
+                                roomCode: roomCode
+                            },
+                            dataType: 'json',
+                            success: function(response) {
+                                if (response.success) {
+                                    // 房间验证成功，获取房间数据
+                                    const roomData = response.data;
+                                    
+                                    // 直接加入房间
+                                    $.ajax({
+                                        url: 'includes/room_ajax.php',
+                                        type: 'POST',
+                                        data: {
+                                            action: 'join_room',
+                                            roomCode: roomCode,
+                                            campid: '1',  // 默认阵营
+                                            addPos: '0'   // 默认位置
+                                        },
+                                        dataType: 'json',
+                                        success: function(joinResponse) {
+                                            // 恢复按钮状态
+                                            directJoinBtn.disabled = false;
+                                            directJoinBtn.innerHTML = '加入房间并启动游戏';
+                                            
+                                            if (joinResponse.success) {
+                                                // 加入成功，启动游戏
+                                                const joinData = joinResponse.data;
+                                                
+                                                console.log('房间加入成功，数据:', joinData);
+                                                
+                                                // 准备游戏启动数据 - 直接使用云函数返回的数据
+                                                const normalRoomData = {
+                                                    actiontype: joinData.actiontype || "2",
+                                                    sign: joinData.sign || "",
+                                                    message: joinData.message || "",
+                                                    platType: joinData.platType || "8",
+                                                    createType: joinData.createType || "1",
+                                                    roomName: joinData.roomName || "5v5排位",
+                                                    launchFromYingDi: joinData.launchFromYingDi || "1",
+                                                    ullExternUid: joinData.ullExternUid,
+                                                    ullRoomid: joinData.ullRoomid || roomCode,
+                                                    teamerNum: joinData.teamerNum || "5",
+                                                    AddType: joinData.AddType || "1",
+                                                    mapID: joinData.mapID,
+                                                    mapType: joinData.mapType,
+                                                    sign1: joinData.sign1 || ""
+                                                };
+                                                
+                                                // 转为JSON并编码为Base64
+                                                const jsonData = JSON.stringify(normalRoomData);
+                                                
+                                                // Base64编码函数
+                                                function bytesToBase64(bytes) {
+                                                    let binary = '';
+                                                    const len = bytes.length;
+                                                    for (let i = 0; i < len; i++) {
+                                                        binary += String.fromCharCode(bytes[i]);
+                                                    }
+                                                    return window.btoa(binary);
+                                                }
+                                                
+                                                // 使用 TextEncoder 和 UTF-8 支持中文
+                                                const base64Data = bytesToBase64(new TextEncoder().encode(jsonData));
+                                                
+                                                // 普通房间使用camplaunch_前缀
+                                                const gameDataURL = "tencentmsdk1104466820://?gamedata=camplaunch_" + base64Data;
+                                                
+                                                // 创建一个临时的游戏启动链接并自动点击
+                                                const tempLink = document.createElement('a');
+                                                tempLink.href = gameDataURL;
+                                                document.body.appendChild(tempLink);
+                                                tempLink.click();
+                                                document.body.removeChild(tempLink);
+                                                
+                                                // 显示成功消息
+                                                showGlobalMessage('房间加入成功！游戏正在启动...', 'success');
+                                            } else {
+                                                // 加入房间失败
+                                                showGlobalMessage('加入房间失败: ' + (joinResponse.message || '未知错误'), 'error');
+                                            }
+                                        },
+                                        error: function(xhr, status, error) {
+                                            // 恢复按钮状态
+                                            directJoinBtn.disabled = false;
+                                            directJoinBtn.innerHTML = '加入房间并启动游戏';
+                                            
+                                            showGlobalMessage('加入房间请求失败，请稍后重试', 'error');
+                                            console.error('加入房间请求错误:', error);
+                                        }
+                                    });
+                                } else {
+                                    // 房间验证失败
+                                    directJoinBtn.disabled = false;
+                                    directJoinBtn.innerHTML = '加入房间并启动游戏';
+                                    
+                                    showGlobalMessage('房间不存在或未创建: ' + (response.message || '验证失败'), 'error');
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                // 恢复按钮状态
+                                directJoinBtn.disabled = false;
+                                directJoinBtn.innerHTML = '加入房间并启动游戏';
+                                
+                                showGlobalMessage('验证房间请求失败，请稍后重试', 'error');
+                                console.error('验证房间请求错误:', error);
+                            }
+                        });
+                    });
+                });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 底部QQ群信息 -->
+
+
+<!-- 使用说明 -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>使用说明</h5>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="instructionAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                如何创建房间？
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#instructionAccordion">
+                            <div class="accordion-body">
+                                <ol>
+                                    <li>在上方<a href="#create-room-section">创建房间</a>区域选择房间类型：匹配或排位</li>
+                                    <li>点击"创建房间"按钮</li>
+                                    <li>系统会自动为您创建房间并生成房间号</li>
+                                    <li>将房间号分享给好友即可邀请他们加入</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                如何加入房间？
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#instructionAccordion">
+                            <div class="accordion-body">
+                                <ol>
+                                    <li>在上方<a href="#join-room-section">加入房间</a>区域输入好友分享的房间号</li>
+                                    <li>点击"加入房间并启动游戏"按钮</li>
+                                    <li>系统会自动验证房间并启动游戏</li>
+                                    
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div><!-- 关闭主内容区 -->
+    
+    <!-- 页脚 -->
+    <footer class="footer mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                
+            </div>
+        
+        </div>
+    </footer>
+    
+    <!-- 全局自定义JS -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- 全局消息容器 -->
+    <div id="globalMessageContainer" class="position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 1050; display: none;">
+        <div id="globalMessage" class="alert" role="alert"></div>
+    </div>
+
+    <!-- 自定义JS -->
+    <script src="/assets/js/custom.js"></script>
+    
+    <!-- TextEncoder垫片（用于不支持的浏览器） -->
+    <script>
+    if (typeof TextEncoder === "undefined") {
+        TextEncoder = function TextEncoder() {};
+        TextEncoder.prototype.encode = function(str) {
+            "use strict";
+            var Len = str.length, resPos = -1;
+            var resArr = new Uint8Array(Len * 3);
+            for (var point=0, nextcode=0, i = 0; i !== Len; ) {
+                point = str.charCodeAt(i);
+                i += 1;
+                if (point >= 0xD800 && point <= 0xDBFF) {
+                    if (i === Len) {
+                        resArr[++resPos] = 0xef; resArr[++resPos] = 0xbf; resArr[++resPos] = 0xbd; break;
+                    }
+                    nextcode = str.charCodeAt(i);
+                    if (nextcode >= 0xDC00 && nextcode <= 0xDFFF) {
+                        point = (point - 0xD800) * 0x400 + nextcode - 0xDC00 + 0x10000;
+                        i += 1;
+                    } else {
+                        resArr[++resPos] = 0xef; resArr[++resPos] = 0xbf; resArr[++resPos] = 0xbd; continue;
+                    }
+                }
+                if (point <= 0x7F) {
+                    resArr[++resPos] = point;
+                } else if (point <= 0x7FF) {
+                    resArr[++resPos] = 0xC0 | (point >> 6);
+                    resArr[++resPos] = 0x80 | (point & 0x3F);
+                } else if (point <= 0xFFFF) {
+                    resArr[++resPos] = 0xE0 | (point >> 12);
+                    resArr[++resPos] = 0x80 | ((point >> 6) & 0x3F);
+                    resArr[++resPos] = 0x80 | (point & 0x3F);
+                } else {
+                    resArr[++resPos] = 0xF0 | (point >> 18);
+                    resArr[++resPos] = 0x80 | ((point >> 12) & 0x3F);
+                    resArr[++resPos] = 0x80 | ((point >> 6) & 0x3F);
+                    resArr[++resPos] = 0x80 | (point & 0x3F);
+                }
+            }
+            return resArr.subarray(0, resPos + 1);
+        };
+    }
+    
+    // 全局消息显示函数
+    function showGlobalMessage(message, type = 'info', duration = 3000) {
+        const container = document.getElementById('globalMessageContainer');
+        const msgElement = document.getElementById('globalMessage');
+        
+        // 设置消息类型样式
+        msgElement.className = 'alert';
+        switch(type) {
+            case 'success':
+                msgElement.classList.add('alert-success');
+                duration = 5000; // 成功消息显示时间长一点
+                break;
+            case 'error':
+                msgElement.classList.add('alert-danger');
+                duration = 7000; // 错误消息显示时间更长
+                break;
+            case 'warning':
+                msgElement.classList.add('alert-warning');
+                duration = 5000; // 警告消息显示时间长一点
+                break;
+            default:
+                msgElement.classList.add('alert-custom-pink');
+        }
+        
+        // 添加图标
+        let icon = '';
+        switch(type) {
+            case 'success':
+                icon = '<i class="fas fa-check-circle me-2"></i>';
+                break;
+            case 'error':
+                icon = '<i class="fas fa-times-circle me-2"></i>';
+                break;
+            case 'warning':
+                icon = '<i class="fas fa-exclamation-triangle me-2"></i>';
+                break;
+            default:
+                icon = '<i class="fas fa-info-circle me-2"></i>';
+        }
+        
+        // 设置消息内容
+        msgElement.innerHTML = icon + message;
+        
+        // 显示消息
+        container.style.display = 'block';
+        
+        // 设置定时器自动关闭
+        setTimeout(function() {
+            container.style.display = 'none';
+        }, duration);
+    }
+    </script>
+</body>
+</html>  
